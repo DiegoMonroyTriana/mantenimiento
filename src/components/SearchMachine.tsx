@@ -101,7 +101,7 @@ export function SearchMachine () {
         onSelect={handleSelectDescription}
         className='px-2 py-1 border-2 border-black/50 focus:outline-none focus:border-black rounded-sm'
       >
-        <option hidden>Selecciona una descrición</option>
+        <option hidden>Selecciona una descripción</option>
         {
           failureDescriptions?.map((option) => (
             <option
