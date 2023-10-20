@@ -3,7 +3,6 @@
 import useStore from '@/store/useStore'
 import { type MachineType, type FailureDescriptionType } from '@/types/tables'
 import { useState } from 'react'
-import { CameraComponent } from './camera'
 
 export function SearchMachine () {
   const { machines, failureDescriptions, failureTypes } = useStore()
@@ -13,7 +12,6 @@ export function SearchMachine () {
   const [currentFailureDescription, setCurrentFailureDescription] = useState<FailureDescriptionType | null>(null)
   const [currentFailureType, setCurrentFailureType] = useState<FailureDescriptionType | null>(null)
   const [inputValue, setInputValue] = useState('')
-  const [cameraOpen, setCameraOpen] = useState(false)
 
   function handleSearchMachine (event: React.ChangeEvent<HTMLInputElement>) {
     setInputValue(event.target.value)
@@ -140,10 +138,6 @@ export function SearchMachine () {
         className='px-2 py-1 border-2 border-black/50 focus:outline-none focus:border-black rounded-sm resize-none'
         placeholder='Comentarios'
       />
-      <button onClick={() => { setCameraOpen(true) }} className='bg-mariner-500 hover:bg-mariner-600 active:bg-mariner-700 rounded-md py-2 text-white font-bold transition-all'>
-        Capturar evidencia
-      </button>
-      <CameraComponent visible={cameraOpen} setVisible={setCameraOpen} />
     </>
   )
 }
