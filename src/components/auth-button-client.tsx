@@ -1,6 +1,5 @@
 'use client'
 
-import { REDIRECT_URL } from '@/constants/constants'
 import {
   type Session,
   createClientComponentClient
@@ -14,7 +13,7 @@ export function AuthButton ({ session }: { session: Session | null }) {
     await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${REDIRECT_URL}/auth/callback`
+        redirectTo: `https://mantenimiento-eosin.vercel.app/auth/callback`
       }
     })
   }
