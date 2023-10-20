@@ -69,7 +69,7 @@ export function ActiveOrder ({ maintenance }: { maintenance: MaintenanceType }) 
           </p>
         </div>
         {maintenance.comments !== null && (
-          <div className="flex flex-col">
+          <div className="flex flex-col max-w-sm">
             <strong className="text-sm">Comentarios adicionales</strong>
             <p className="text-sm [text-wrap:balance] text-black/70">
               {maintenance.comments}
