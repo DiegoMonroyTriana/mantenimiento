@@ -98,7 +98,7 @@ function FormMaintenance () {
   }
 
   return (
-    <section className='w-fit grid grid-cols-2 gap-4 p-4 rounded-lg shadow-md transition-all'>
+    <section className='w-fit grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg shadow-md transition-all'>
       {success && <SnackBar>La orden de trabajo se ha creado correctamente</SnackBar>}
       <div className='flex flex-col gap-5'>
         <Title>Crear orden de trabajo</Title>
