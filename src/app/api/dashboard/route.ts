@@ -21,7 +21,8 @@ export async function GET () {
     status: 200,
     data: {
       ongoing: dataFinish.length,
-      all: data.length
+      all: data.length - dataFinish.length,
+      total: data.length
     }
   })
 }
