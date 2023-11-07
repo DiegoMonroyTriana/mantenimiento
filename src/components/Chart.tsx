@@ -14,7 +14,7 @@ interface Data {
 
 const Chart = () => {
   const [data, setData] = useState<Data[] | null>(null)
-
+  const [total, setTotal] = useState<number>(0)
   useEffect(() => {
     (async () => {
       const res = await fetch('/api/dashboard')
@@ -31,6 +31,7 @@ const Chart = () => {
         value: body.ongoing,
         color: 'hsl(209, 100%, 49%)'
       }]
+      setTotal(body.total)
       setData(data)
     })()
   }, [])
@@ -43,6 +44,8 @@ const Chart = () => {
     )
   }
   return (
+    <section className='flex flex-col w-full h-full'>
+      <p className='text-xl font-bold '>Total de montacargas: {total}</p>
     <ResponsivePie
       data={data}
       margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
@@ -100,7 +103,8 @@ const Chart = () => {
           ]
         }
       ]}
-    />
+      />
+      </section>
   )
 }
 
