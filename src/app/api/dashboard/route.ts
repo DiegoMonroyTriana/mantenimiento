@@ -20,6 +20,7 @@ export async function GET () {
   return NextResponse.json({
     status: 200,
     data: {
+      preventive: dataFinish.filter((item) => item.failure_type === '1abe362f-2f7b-4011-a30f-03f53a110eb6').length,
       ongoing: dataFinish.length,
       all: data.length - dataFinish.length,
       total: data.length
