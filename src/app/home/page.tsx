@@ -1,21 +1,29 @@
-'use client'
+'use client';
 
-import Chart from '@/components/Chart'
-import SnackBar from '@/components/Snackbar'
-import Title from '@/components/Title'
-import { useSearchParams } from 'next/navigation'
+import Chart from '@/components/Chart';
+import SnackBar from '@/components/Snackbar';
+import Title from '@/components/Title';
+import Disponibilidad from '@/components/Disponibilidad';
+import { useSearchParams } from 'next/navigation';
+import MachinesChart from '@/components/MachinesChart';
 
-export default async function HomePage () {
-  const searchParams = useSearchParams()
-  const message = searchParams.get('message')
+export default async function HomePage() {
+  const searchParams = useSearchParams();
+  const message = searchParams.get('message');
 
   return (
-    <main className=' w-full h-full flex flex-col justify-start pt-28 items-start px-20'>
-      <Title>Disponibilidad de las maquinas</Title>
-      <div className='grid grid-cols-auto-fill gap-5 w-full h-[400px]'>
-        <Chart/>
+    <main className="grid grid-cols-1 xl:grid-cols-2 place-items-center pt-28 px-20">
+      <section className="flex flex-col justify-start items-start ">
+        <Title>Disponibilidad de equipos</Title>
+        <div className="w-full h-[400px] justify-start">
+          <Chart />
+        </div>
+        <Disponibilidad />
+        {message != null && <SnackBar>{message}</SnackBar>}
+      </section>
+      <div className="w-full h-full justify-start">
+        <MachinesChart />
       </div>
-      {message != null && <SnackBar>{message}</SnackBar>}
     </main>
-  )
+  );
 }
