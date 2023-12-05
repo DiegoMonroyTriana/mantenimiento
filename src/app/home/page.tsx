@@ -6,7 +6,6 @@ import Title from '@/components/Title';
 import Disponibilidad from '@/components/Disponibilidad';
 import { useSearchParams } from 'next/navigation';
 import MachinesChart from '@/components/MachinesChart';
-import MostFail from '@/components/MostFail';
 
 export default async function HomePage() {
   const searchParams = useSearchParams();
@@ -20,7 +19,6 @@ export default async function HomePage() {
           <Chart />
         </div>
         <Disponibilidad />
-         <MostFail />
         {message != null && <SnackBar>{message}</SnackBar>}
       </section>
       <div className="w-full h-full justify-start">
