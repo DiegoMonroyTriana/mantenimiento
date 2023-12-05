@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowUp } from './icons';
+import MostFail from '@/components/MostFail';
 
 async function Disponibilidad() {
   const response = await fetch('/api/disponibilidad');
@@ -74,6 +75,9 @@ async function Disponibilidad() {
           <p className="font-bold">Hoy</p>
         </div>
       </article>
+      <div className="col-span-2">
+        <MostFail />
+      </div>
     </div>
   );
 }
