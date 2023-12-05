@@ -19,7 +19,7 @@ async function MostFail () {
       </small>
       </strong>
 
-    <div className="flex flex-col gap-2">
+    <div className="grid grid-cols-2 gap-2">
         <span className="text-gray-600 text-xs"><strong>No. economico:</strong> {machineInfo.economic_number}</span>
         <span className="text-gray-600 text-xs"><strong>No. serie:</strong>{machineInfo.serial}</span>
         <span className="text-gray-600 text-xs"><strong>Modelo:</strong>{machineInfo.model}</span>
